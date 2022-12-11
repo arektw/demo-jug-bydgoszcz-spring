@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.ConstraintViolationException;
-import javax.validation.Valid;
-import javax.validation.constraints.Size;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Size;
 
 @RestController
 @Validated
 public class HelloController {
     private static final int MAX_CITY_LENGTH = 15;
     private static final int MIN_CITY_LENGTH = 3;
+
     @GetMapping("/greeting")
     public String greeting(@Value("${app.returned-string}") String someString) {
         return someString;
